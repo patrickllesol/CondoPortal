@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CondoPortal</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+ 
+  
+  
+</head>
+
+
+
+<%= image_tag 'house.jpg', alt: 'logo', style:"height:250px; width:100%;" %>
+
+<div class="topnav">
+  <a><%= link_to image_tag("home.png", size: "35x35", title: "HOME"), '/homepage' %></a>
+  <a><%= link_to image_tag("invoice.png", size: "35x35", title: "BILLS"), '/bills' %></a>
+  <a><%= link_to image_tag("msg.png", size: "35x35", title: "MESSAGES"), '/messages' %></a>
+  <a><%= link_to image_tag("megaphone.png", size: "35x35", title: "ANNOUNCEMENTS"), '/announcements' %></a>
+  <a><%= link_to image_tag("users.png", size: "35x35", title: "USERS"), '/userslist' %></a>
+
+ 
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+<a></a>
+ <a>
+  <% if current_user %>
+                                      <h3  style="font-family:Proxima Nova; font-size:13px;"> Welcome <%= current_user.username %>! |  </h3><%= link_to image_tag("logout.png", size: "35x35", title: "Logout"), '/logout' %> 
+<% else %>
+  <%= link_to image_tag("key.png", size: "35x35", title: "Login"), '/login' %> 
+<% end %>
+
+
+  
+  
+  </a>
+</div>
+
+<body>
+
+
+
+
+
+	
+<%= yield %>
+
+
+
+	
+
+
+
+
+
+
+</body>
+</html>

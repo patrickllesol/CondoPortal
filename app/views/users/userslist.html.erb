@@ -1,0 +1,32 @@
+<h1 align="center" style="font-family:Proxima Nova; font-size:50px">T E N A N T S  <%= link_to image_tag("add.png", size: "40x40", title: "Add Tenant"), '/signup' %>
+</h1>
+
+<table class="table" align="center" style="font-family:Proxima Nova; font-size:20px" >
+  <thead>
+    <tr>
+      <th style="padding-right:50x">Username</th>
+      <th>Apartment Number</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+
+    </tr>
+  </thead>
+
+  <tbody >
+    <% @users.each do |user| %>
+      <tr >
+		<td><%= user.username %></td>
+        <td><%= user.apartment_number %></td>
+		<td><%= user.first_name %></td>
+		<td><%= user.last_name %></td>
+		<td>
+			<% if user.username != "admin" %>
+			<a href= "bills/userbill/<%= user.apartment_number %>">Bills</a>
+			<% end %>
+		</td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+

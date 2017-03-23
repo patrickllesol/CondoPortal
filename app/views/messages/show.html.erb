@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1 align="center" style="font-family:Proxima Nova; font-size:35px">MESSAGES</h1>
+
+
+<p align="center" style="font-family:Proxima Nova; font-size:20px">
+  <strong>Sender:</strong>
+  <%= @message.sender %>
+</p>
+
+<p align="center" style="font-family:Proxima Nova; font-size:20px">
+  <strong>Recipient:</strong>
+  <%= @message.recipient %>
+</p>
+
+<p align="center" style="font-family:Proxima Nova; font-size:20px">
+  <strong>Message:</strong>
+  <%= @message.message %>
+</p>
+
+<p align="center" style="font-family:Proxima Nova; font-size:20px">
+  <strong>Date:</strong>
+  <%= @message.date %>
+</p>
+
+<h3 align="center">
+
+<%= link_to 'Back', messages_path %>
+</h3>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center" style="font-family:Proxima Nova; font-size:50px">T E N A N T S' B I L L S   <% if current_user.username == "admin" %><%= link_to image_tag("add.png", size: "40x40", title: "Copy Bill"), new_bill_path %><% end %>
+</h1>
+
+<table class="table" align="center" style="font-family:Proxima Nova; font-size:20px" >
+  <thead>
+    <tr>
+      <th>Apartment number</th>
+      <th>Rent</th>
+      <th>Electricity</th>
+      <th>Water </th>
+      <th>Due date</th>
+      <th>Status</th>
+      <th colspan="10"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bills.each do |bill| %>
+      <tr align="center">
+        <td><%= bill.apartment_number %></td>
+        <td><%= bill.rent %></td>
+        <td><%= bill.electricity_bill %></td>
+        <td><%= bill.water_bill %></td>
+        <td><%= bill.due_date %></td>
+        <td><%= bill.status %></td>
+        <td><%= link_to 'Show', bill %></td>
+        <td><% if current_user.username == "admin" %><%= link_to 'Edit', edit_bill_path(bill) %><% end %></td>
+        <td><% if current_user.username == "admin" %><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
