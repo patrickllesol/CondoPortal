@@ -10,12 +10,10 @@
 
 .container {
     paddingp: 25px;
-
    position: fixed;
 }
 
 .form-login {
-
     background-color: #EDEDED;
     padding-top: 10px;
     padding-bottom: 200px;
@@ -27,7 +25,7 @@
     box-shadow:0 1px 0 #cfcfcf;
 }
 
-h4 { 
+h4#welcome { 
  border:0 solid #fff; 
  border-bottom-width:1px;
  padding-bottom:10px;
